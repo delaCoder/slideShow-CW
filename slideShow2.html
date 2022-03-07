@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sea Creature</title>
+    <link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+
+    <!-- main>h1{Sea Creatures}+ul#slides>li.slide*6>img[src="images/sea0$.jpg"][alt="sea creature"] -->
+<main>
+    <h1>Sea Creatures</h1>
+    <ul id="slides">
+        <li class="slide showing"><img src="images/sea01.jpg" alt="sea creature"></li>
+        <li class="slide"><img src="images/sea02.jpg" alt="sea creature"></li>
+        <li class="slide"><img src="images/sea03.jpg" alt="sea creature"></li>
+        <li class="slide"><img src="images/sea04.jpg" alt="sea creature"></li>
+        <li class="slide"><img src="images/sea05.jpg" alt="sea creature"></li>
+        <li class="slide"><img src="images/sea06.jpg" alt="sea creature"></li>
+    </ul>
+</main>
+
+<script>
+    var slides = document.querySelectorAll('#slides .slide'); 
+    console.log(slides);
+    var currentSlide = 0;
+    var slideTimer = setInterval(nextSlide, 2000); // CALLING FUNCTION EVERY 2 SECS
+
+    function nextSlide() {
+        slides[currentSlide].className = 'slide';
+        currentSlide = (currentSlide+1)%slides.length;
+        console.log(currentSlide);
+        slides[currentSlide].className = 'slide showing';
+    }
+</script>
+</body>
+</html>

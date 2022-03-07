@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+img {
+    max-width: 100%; /*responsive*/
+    height: auto;
+    border: solid 4px #333;
+}
+
+ul#slides {
+    list-style-type: none;
+    max-width: 650px;
+    max-height: 365px;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+li.slide { /* STACKS IMAGES ON TOP OF EACH OTHER*/
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    padding: 0;
+    opacity: 0; /* MAKES ALL OF THE IMAGES DISAPPEAR */
+    transition: opacity 1s;
+}
+
+li.showing {
+    opacity: 1;
+    z-index: 2; 
+}

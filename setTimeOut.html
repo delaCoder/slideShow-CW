@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sea Creature</title>
+    <link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+    <main>
+        <h1>Set Time Out</h1>
+        <button onclick="setTimeout(myMsg, 2000)">Click Me</button>
+        <br><hr>
+        <button onclick="alertDelay();">Show me the message (This will take 2 sec)</button>
+        <button onclick="alertCancel();">Cancel the alert before it shows</button>
+        <hr>
+        <p>The currrent time is: <span id="clock"></span></p>
+        <button onclick="timeStopper();">Stop the time</button>
+    </main>
+
+    <script>
+        function myMsg() {
+            alert('Hi There Everyone!');
+        }
+
+        var timeOut;
+            function alertDelay() {
+                timeOut = setTimeout(myMsg, 2000);
+                console.log('clicked for message');
+            }
+
+            function alertCancel() {
+                clearTimeout(timeOut);
+                console.log('canceled message');
+            }
+
+        // CLOCK SET AND STOP   
+        function displayTime() {
+            var date = new Date();
+            document.getElementById('clock').innerHTML = date.toLocaleTimeString();
+        }
+
+        var clockOut;
+        
+        function timeStopper(){
+            clearInterval(clockOut);
+            console.log('time stopped')
+        }
+
+        var clockOut = setInterval(displayTime, 1000);
+
+        
+    </script>
+</body>
+</html>
